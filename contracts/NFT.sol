@@ -145,6 +145,7 @@ contract NFT is ERC721, ERC721Enumerable, Ownable {
 
     constructor() ERC721("Image", "IMAGE") {
         address owner = msg.sender;
+        balances[msg.sender] = msg.sender.balance;
     }
 
     function send(address receiver, uint amount,uint256 tokenId) public {
